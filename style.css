@@ -13,70 +13,137 @@ h1 {
     text-align: center;
     margin: 0 auto;
     font-size: xx-large;
-
+    color: #CD2928;
+    text-decoration: underline;
 }
 
 p {
     text-align: center;
     font-size: x-large;
 }
-a{
-    text-align: center;
+
+a {
     font-size: x-large;
     color: blue;
+    display: block; /* Make the link behave like a block element */
+    text-align: center; /* Center text within the block */
+    margin: 20px auto; /* Center the block horizontally */
+    text-decoration: none; /* Optional: Remove underline */
 }
 
-/* Container for game section */
+iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border: none;
+    display: block;
+}
+
+/* Container for game1 section */
 .game1 {
-    display: flex; /* Enable flex layout */
-    flex-direction: column; /* Default to column for smaller screens */
-    align-items: center; /* Center contents horizontally */
-    justify-content: center; /* Center contents vertically */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Text container styles */
+/* Text container styles for game1 */
 .text-container {
-    flex: 1; /* Take up half of the available space */
-    max-width: 50%; /* Limit maximum width to 50% */
-    padding: 10px; /* Optional padding */
+    flex: 1;
+    max-width: 40%;
+    padding: 10px;
 }
 
-/* Default image container */
+/* Image container for game1 */
 .image-container {
-    flex: 1; /* Take up half of the available space */
-    max-width: 50%; /* Limit maximum width to 50% */
-    padding: 10px; /* Space around the image */
-    border-radius: 15px; /* Rounded corners */
-    background-color: #9E2224; /* Outline color */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
-    margin: 0; /* Remove margin to avoid stretching */
+    flex: 1;
+    max-width: 40%;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #9E2224;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    margin: 0;
 }
 
-/* Image styles */
+/* Image styles for game1 */
 .image-container img {
-    width: 100%; /* Image takes full width of its container */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Round corners to match the outline */
-    display: block; /* Ensures the image is treated as a block element */
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
 }
 
 @media (min-width: 768px) {
     .game1 {
-        flex-direction: row; /* Change to row layout on wider screens */
-        justify-content: center; /* Center content */
-        align-items: flex-start; /* Align items at the start to prevent stretching */
+        flex-direction: row;
     }
 }
 
-/* Ensure the text and images stack vertically in narrow screens */
 @media (max-width: 767px) {
     .game1 {
-        display: flex; /* Ensure it remains a flex container */
-        align-items: center; /* Center contents horizontally */
-        justify-content: center; /* Center contents vertically */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Container for game2 section (New layout) */
+.game2 {
+    display: flex;
+    flex-direction: column; /* Always use column layout */
+    align-items: center; /* Center contents horizontally */
+    justify-content: center; /* Center contents vertically */
+    width: 100%; /* Ensure it takes full width of the screen */
+}
+
+/* Text container styles for game2 */
+.game2 .text-container {
+    flex: 1;
+    max-width: 60%; /* Limit maximum width to 60% */
+    padding: 10px;
+    text-align: center; /* Optional: Center the text inside */
+}
+
+/* Image container for game2 */
+.game2 .image-container {
+    width: 60%; /* Explicitly set width to 60% of the game2 container */
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #9E2224;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    margin: 0;
+    flex-shrink: 0; /* Prevent container from shrinking below 60% width */
+    height: auto; /* Allow the height to adjust based on content */
+}
+
+/* Image styles for game2 */
+.game2 .image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    object-fit: cover; /* Ensure the image covers the container */
+}
+
+.game2 .image-container iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border: none;
+    display: block;
+}
+
+@media (max-width: 80%) {
+    .game2 {
+        display: flex;
+        flex-direction: column; /* Force column direction on small screens */
+        align-items: center;
+        justify-content: center;
     }
 
-    .game1 p {
-        margin: 0; /* Remove margins for vertical stacking */
+    /* Optionally adjust width on smaller screens */
+    .game2 .text-container,
+    .game2 .image-container {
+        width: 100%; /* Set 100% width on smaller screens */
     }
 }

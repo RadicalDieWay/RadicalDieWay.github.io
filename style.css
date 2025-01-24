@@ -211,6 +211,12 @@ iframe {
     text-align: center;  /* Center the text inside */
     color: #362022;
 }
+h3 {
+    margin-bottom: -15px;
+    font-size: 1.3rem;
+    text-align: center;  /* Center the text inside */
+    color: #362022;
+}
   
   .skills-grid {
     display: flex;
@@ -287,4 +293,29 @@ iframe {
 
 .button {
     margin: 5px;
+}
+
+/* Container for the filter boxes */
+.filter-container {
+    display: flex;             /* Use flexbox */
+    justify-content: center;   /* Horizontally center the items */
+    align-items: center;       /* Vertically center the items */
+    gap: 10px;                 /* Add some space between the filter boxes */
+    margin-top: 20px;          /* Add some space from the top */
+    margin-bottom: 20px;          /* Add some space from the top */
+}
+
+/* Style for each select box (optional, to add space and make them look better) */
+.filter-container select {
+    padding: 8px 16px;         /* Add padding inside the select boxes */
+    font-size: 16px;           /* Adjust font size */
+    border-radius: 5px;        /* Rounded corners */
+    border: 1px solid #ccc;    /* Border around the select */
+    background-color: #f9f9f9; /* Light background color */
+    cursor: pointer;          /* Change cursor to pointer for better UX */
+}
+
+.filter-container select:focus {
+    border-color: #007bff;     /* Change border color on focus */
+    outline: none;             /* Remove default outline */
 }
